@@ -1,0 +1,115 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --font-display: "Yeseva One", serif;
+  --font-sans: "Mulish", system-ui, sans-serif;
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.975 0.015 80);
+  --foreground: oklch(0.22 0.04 25);
+  --card: oklch(0.995 0.008 80);
+  --card-foreground: oklch(0.22 0.04 25);
+  --popover: oklch(0.995 0.008 80);
+  --popover-foreground: oklch(0.22 0.04 25);
+  --primary: oklch(0.36 0.12 20);
+  --primary-foreground: oklch(0.97 0.02 80);
+  --secondary: oklch(0.93 0.03 75);
+  --secondary-foreground: oklch(0.3 0.08 25);
+  --muted: oklch(0.94 0.02 75);
+  --muted-foreground: oklch(0.48 0.04 30);
+  --accent: oklch(0.76 0.16 65);
+  --accent-foreground: oklch(0.22 0.05 30);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.88 0.03 70);
+  --input: oklch(0.88 0.03 70);
+  --ring: oklch(0.76 0.16 65);
+  --whatsapp: oklch(0.72 0.18 150);
+  --whatsapp-foreground: oklch(0.99 0 0);
+  --chart-1: oklch(0.36 0.12 20);
+  --chart-2: oklch(0.76 0.16 65);
+  --chart-3: oklch(0.6 0.12 150);
+  --chart-4: oklch(0.55 0.1 250);
+  --chart-5: oklch(0.65 0.15 40);
+  --sidebar: oklch(0.975 0.015 80);
+  --sidebar-foreground: oklch(0.22 0.04 25);
+  --sidebar-primary: oklch(0.36 0.12 20);
+  --sidebar-primary-foreground: oklch(0.97 0.02 80);
+  --sidebar-accent: oklch(0.93 0.03 75);
+  --sidebar-accent-foreground: oklch(0.3 0.08 25);
+  --sidebar-border: oklch(0.88 0.03 70);
+  --sidebar-ring: oklch(0.76 0.16 65);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
